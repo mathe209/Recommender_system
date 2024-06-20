@@ -11,6 +11,9 @@ There are 7 item types to recommend and several ways to interact with these item
 The initial solution uses a mean-centering approach where we simply subtract the mean of each row from each entry in that row.
 Subsequent solutions will look at other methods of normalization such as min-max-centering for example to see how the result may change.
 
-#### User-item Matrix
+#### User-item Matrix and Similarity scores
 The original dataset is in long form and it has to be changed to a wide format.
 From the user-item matrix, I can compute the user-user similarity matrix using Pearson's correlation.
+The first approach calculates the scores of each item by multiplying the similarity score for each item by the item rating/count and then computes the average score for that item.
+##### Recommendations
+The first method uses the average score for each item and recommends the topK items to the user, 2 in this case.
